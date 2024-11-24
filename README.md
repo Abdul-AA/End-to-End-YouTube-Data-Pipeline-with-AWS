@@ -62,6 +62,28 @@ The data for this project is sourced from Kaggle. You can access it [here](https
 
 ---
 
+## Querying Raw JSON Data
+
+When attempting to query the raw JSON data directly, an error occurred due to improper format as shown below:
+
+![Raw JSON Query Error](./Screenshots/Raw_Json_query_result.jpeg)  
+*Figure: Error encountered while querying unprocessed JSON data.*
+
+## After Running the Lambda Function
+
+After processing the JSON data using the AWS Lambda function, the format was corrected and converted to parquet, enabling successful queries. The cleaned data query result is shown here:
+
+![Cleaned JSON Query Result](./Screenshots/Cleaned_Json_Query_Result.jpeg)  
+*Figure: Query result after processing raw JSON data with Lambda.*
+
+## Final Reporting Version
+
+To prepare the data for reporting, the CSV data was processed using AWS Glue to ensure compatibility with the cleaned json data. A Glue Visual ETL job was then used to join the processed CSV and parquet data. The final, analytics-ready data is shown below:
+
+![Final Reporting Version Query Result](./Screenshots/Final_reporting_version_query_result.jpeg)  
+*Figure: Joined data ready for reporting after Glue processing and transformation.*
+
+
 ## Dashboard Preview
 
 ![YouTube Data Dashboard](./Screenshots/Dashboard.jpeg)
