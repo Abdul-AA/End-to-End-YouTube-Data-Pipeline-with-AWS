@@ -1,19 +1,8 @@
+
+
 # End-to-End-YouTube-Data-Pipeline-with-AWS
 
 ![AWS YouTube Data Pipeline Architecture](Architecture_Diagram/Youtube_Pipeline.png)
-
-*Figure: End-to-End AWS YouTube Data Pipeline Architecture - Illustrating data flow from ingestion to analytics.*
-
-
-## Dashboard Preview
-
-![YouTube Data Dashboard](./Screenshots/Dashboard.jpeg)
-
-*Figure: Dashboard generated from the pipeline with QuickSight.*
-
-# End-to-End-YouTube-Data-Pipeline-with-AWS
-
-![AWS YouTube Data Pipeline Architecture](./Youtube_Pipeline.png)
 
 *Figure: End-to-End AWS YouTube Data Pipeline Architecture - Illustrating data flow from ingestion to analytics.*
 
@@ -30,7 +19,7 @@ This project aims to securely manage, streamline, and analyze structured and sem
    Transform raw data into a structured and analytical-ready format.
 
 3. **Data Lake**  
-   Centralize data from multiple sources into a repository.
+   Centralize structured and semi-structured data from multiple sources into a repository.
 
 4. **Scalability**  
    Ensure the system scales as the size of data increases.
@@ -53,13 +42,11 @@ The data for this project is sourced from Kaggle. You can access it [here](https
 
 ### Data Flow Summary
 
-1. Data ingestion is performed using CLI commands located in the file:  
-   `/Users/Abdul/Desktop/End-to-End-YouTube-Data-Pipeline-with-AWS/cli_command.sh`.
+1. Data ingestion is performed using CLI commands located in the [file](/Users/Abdul/Desktop/End-to-End-YouTube-Data-Pipeline-with-AWS/cli_command.sh)
 
 2. **Lambda** is used to process raw JSON files, transforming them into structured formats. These transformations are handled by a Lambda function that triggers whenever a new file is uploaded to the raw S3 bucket.
 
-3. **Glue** is utilized for further data transformation, leveraging PySpark scripts. These scripts are located here:  
-   `/Users/Abdul/Desktop/End-to-End-YouTube-Data-Pipeline-with-AWS/pyspark_code.py`.
+3. **Glue** is utilized for further data transformation, leveraging PySpark scripts. These scripts are located [here](Users/Abdul/Desktop/End-to-End-YouTube-Data-Pipeline-with-AWS/pyspark_code.py).
 
 4. The pipeline utilizes three S3 buckets:  
    - **Raw**: Stores unprocessed data.  
