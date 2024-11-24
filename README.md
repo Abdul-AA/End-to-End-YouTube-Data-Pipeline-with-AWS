@@ -1,6 +1,6 @@
 # End-to-End-YouTube-Data-Pipeline-with-AWS
 
-![AWS YouTube Data Pipeline Architecture](/Users/Abdul/Desktop/End-to-End-YouTube-Data-Pipeline-with-AWS/Architecture_Diagram/Youtube_Pipeline.png)
+![AWS YouTube Data Pipeline Architecture](Architecture_Diagram/Youtube_Pipeline.png)
 
 *Figure: End-to-End AWS YouTube Data Pipeline Architecture - Illustrating data flow from ingestion to analytics.*
 
