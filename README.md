@@ -44,16 +44,16 @@ The data for this project is sourced from Kaggle. You can access it [here](https
 
 1. Data ingestion is performed using CLI commands located in the [file](/Users/Abdul/Desktop/End-to-End-YouTube-Data-Pipeline-with-AWS/cli_command.sh)
 
-2. **Lambda** is used to process raw JSON files, transforming them into structured formats. These transformations are handled by a Lambda function that triggers whenever a new file is uploaded to the raw S3 bucket.
+2. **Lambda** is used to process raw JSON files, transforming them into structured formats. These transformations are handled by a Lambda function that triggers whenever a new file is uploaded to the raw S3 bucket. The script is located [here](lambda_function.py)
 
-3. **Glue** is utilized for further data transformation, leveraging PySpark scripts. These scripts are located [here](Users/Abdul/Desktop/End-to-End-YouTube-Data-Pipeline-with-AWS/pyspark_code.py).
+3. **Glue** is used for further data transformation on the structured data (CSVs), leveraging a PySpark script located [here](Users/Abdul/Desktop/End-to-End-YouTube-Data-Pipeline-with-AWS/pyspark_code.py). This transformation ensures the proper data types in the schema, enabling seamless joins with the processed JSON data.
 
-4. The pipeline utilizes three S3 buckets:  
+4. The pipeline uses three S3 buckets:  
    - **Raw**: Stores unprocessed data.  
-   - **Cleansed**: Contains intermediate transformed data.  
-   - **Analytics**: Hosts the final transformed data ready for reporting.
+   - **Cleansed**: Contains cleansed data.  
+   - **Analytics**: Hosts the final transformed data ready for reporting. This way, there is no need for writing queries to join the data.
 
-5. Glue's **Visual ETL** process prepares the data for analysis. The architecture for this process is shown below:  
+5. Glue's **Visual ETL** process prepares the data for analysis by joining the processed csv and processed json. The architecture for this process is shown below:  
 
    ![Glue Visual ETL](./Screenshots/Glue_Visual_ETL.jpeg)  
    *Figure: Glue Visual ETL process for data transformation.*
@@ -81,11 +81,6 @@ The data for this project is sourced from Kaggle. You can access it [here](https
 - **Amazon QuickSight**: Generate business insights via dashboards.
 - **AWS CloudWatch**: Monitor and alert for pipeline performance.
 
-### Directory Structure and Files
-- **CLI Commands**: `/Users/Abdul/Desktop/End-to-End-YouTube-Data-Pipeline-with-AWS/cli_command.sh`.
-- **PySpark Scripts**: `/Users/Abdul/Desktop/End-to-End-YouTube-Data-Pipeline-with-AWS/pyspark_code.py`.
-- **Glue Visual ETL Diagram**: `/Users/Abdul/Desktop/End-to-End-YouTube-Data-Pipeline-with-AWS/Screenshots/Glue_Visual_ETL.jpeg`.
-
 ---
 
 ## How It Works
@@ -104,15 +99,3 @@ The data for this project is sourced from Kaggle. You can access it [here](https
    AWS CloudWatch is set up to monitor the system's performance and send alerts if needed.
 
 ---
-
-## Future Work
-
-- Integrating streaming data ingestion for real-time analytics.
-- Expanding the dashboard with more metrics and KPIs.
-- Automating additional transformations using Glue Workflows.
-
----
-
-## Contributors
-
-This project was designed and implemented by Abdulrahman Aroworamimo.
