@@ -100,7 +100,7 @@ To prepare the data for reporting, the CSV data was processed using AWS Glue to 
 - **AWS Glue**: ETL processing using PySpark and Visual ETL. Also organizes and classifies the data, ensuring discoverability and metadata management.
 - **AWS IAM**: For access control and permissions.
 - **AWS Athena**: AWS Athena enables SQL-based querying of processed data directly from the Analytics S3 bucket.
-- **Amazon QuickSight**: Generate business insights via dashboards.
+- **Amazon QuickSight**: Generate insights via dashboards.
 - **AWS CloudWatch**: Monitor and alert for pipeline performance.
 
 ---
